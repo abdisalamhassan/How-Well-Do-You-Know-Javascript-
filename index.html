@@ -13,10 +13,12 @@
 <body>
    <div id="container">
 <!--  Start  -->
+
 <div id= "start">Start Quiz</div>
    
   
    <!-- Guide Section  -->
+
 <div id= "guide">
    <h2> Quiz Guide </h2>
    <h4>1. You have up to 40 seconds for each question</h4>
@@ -26,8 +28,47 @@
      <button id ="Continue"> Continue </button>
     </div>
 </div>
+
 <!-- Quiz Section -->
+
+<div id="quix">
+ <div id="quiz_header">
+    <h5>How well do you know Javascript?</h5>
+   <div id="timer">
+     <h6>Time Left</h6>
+     <h6 id="time">00</h6>
+   </div>
+ </div>
+
+<!-- Quiz Questions -->
+
+<div id="question">
+  <h2 id ="questionNo">1.</h2>
+  <h2 id="questionText">How does a "for" loop start?</h2>
+
+  <!-- Quiz Choices -->
+
+<div id ="optionList">
+  <h4 class="choice_que" id=option1>for (i = 0; i <= 5) </h4>
+  <h4 class="choice_que" id=option2>for (i = 0; i <= 5; i++)</h4>
+  <h4 class="choice_que" id=option3>for i = 1 to 5</h4>
+  <h4 class="choice_que" id=option4>for (i <= 5; i++) </h4>
+</div>
+<!-- Answers Section -->
+
+<div id="answerSection">
+<h3 id="total_correct"> 3 of 10 Questions</h3>
+<h3 id="next_question">Next</h3>
+</div>
   </div>
+</div>
+<!-- Result Section -->
+<dic id= "result">
+  <i class="fa-solid fa-trophy"></i>
+  <h6> Congrats! You Have Completed The Quiz! </h6>
+  <h6 id="points"> You Got 4 of 10</h6>
+</dic>
+</div>
 </body>
 
 </html>
