@@ -2,73 +2,72 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Code Quiz</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="./assets/style.css ">
-  <script src="./assets/script.js"></script>
+    <meta charset="UTF-8">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
 
 <body>
-   <div id="container">
-<!--  Start  -->
+    <div id="container">
+        <!--    Start Section     -->
+        <div id="start">Start Quiz</div>
 
-<div id= "start">Start Quiz</div>
-   
-  
-   <!-- Guide Section  -->
+        <!--    Guide Section    -->
+        <div id="guide">
+            <h2>Quiz Guide</h2>
+            <h4>1. You Have Only 20 Seconds For Each Questions.</h4>
+            <h4>3. You'll Get Points On The Basic Of Your Correct Answers.</h4>
+            <h4>4. You Cannot Leave The Quiz Until You Are Done!</h4>
+            <div id="button">
+                <button id="exit">Exit</button>
+                <button id="continue">Continue</button>
+            </div>
+        </div>
 
-<div id= "guide">
-   <h2> Quiz Guide </h2>
-   <h4>1. You have up to 40 seconds for each question</h4>
-   <h4>2.You will get points for every correct answer. </h4>
-   <div id="button"> 
-     <button id ="Exit"> Exit </button>
-     <button id ="Continue"> Continue </button>
+        <!--    Quiz Section    -->
+        <div id="quiz">
+            <div id="quiz_header">
+                <h5>Amazing Quiz App</h5>
+                <div id="timer">
+                    <h6>Time Left</h6>
+                    <h6 id="time">00</h6>
+                </div>
+            </div>
+
+            <!--     Quiz Questions  -->
+
+            <div id="question">
+                <h2 id="questionNo"></h2>
+                <h2 id="questionText"></h2>
+            </div>
+
+            <!--       Quiz Choices   -->
+
+            <div id="optionList">
+                <h4 class="choice_que" id="option1"></h4>
+                <h4 class="choice_que" id="option2"></h4>
+                <h4 class="choice_que" id="option3"></h4>
+                <h4 class="choice_que" id="option4"></h4>
+            </div>
+
+            <!--  Answers Section-->
+
+            <div id="answersSection">
+                <h3 id="total_correct">3 Of 10 Questions</h3>
+                <h3 id="next_question">Next</h3>
+            </div>
+        </div>
+        <!--   Result Section  -->
+        <div id="result">
+            <i class="fas fa-trophy"></i>
+            <h6>You Have Completed The Quiz</h6>
+            <h6 id="points">You Got 4 Out Of 10</h6>
+            <button id="quit">Quit Quiz</button>
+            <button id="startAgain">Start Again</button>
+        </div>
     </div>
-</div>
-
-<!-- Quiz Section -->
-
-<div id="quix">
- <div id="quiz_header">
-    <h5>How well do you know Javascript?</h5>
-   <div id="timer">
-     <h6>Time Left</h6>
-     <h6 id="time">00</h6>
-   </div>
- </div>
-
-<!-- Quiz Questions -->
-
-<div id="question">
-  <h2 id ="questionNo">1.</h2>
-  <h2 id="questionText">How does a "for" loop start?</h2>
-
-  <!-- Quiz Choices -->
-
-<div id ="optionList">
-  <h4 class="choice_que" id=option1>for (i = 0; i <= 5) </h4>
-  <h4 class="choice_que" id=option2>for (i = 0; i <= 5; i++)</h4>
-  <h4 class="choice_que" id=option3>for i = 1 to 5</h4>
-  <h4 class="choice_que" id=option4>for (i <= 5; i++) </h4>
-</div>
-<!-- Answers Section -->
-
-<div id="answerSection">
-<h3 id="total_correct"> 3 of 10 Questions</h3>
-<h3 id="next_question">Next</h3>
-</div>
-  </div>
-</div>
-<!-- Result Section -->
-<dic id= "result">
-  <i class="fa-solid fa-trophy"></i>
-  <h6> Congrats! You Have Completed The Quiz! </h6>
-  <h6 id="points"> You Got 4 of 10</h6>
-</dic>
-</div>
+    <script src="js/questions.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
