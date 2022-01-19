@@ -35,7 +35,7 @@ let choice_que = document.querySelectorAll(".choice_que");
 
 
 let index = 0;
-let timer = 0;
+let timer = 20000;
 let interval = 0;
 
 //total points
@@ -58,9 +58,10 @@ exit.addEventListener("click", () => {
 //Creating Timer For Quiz Timer Section
 
 let countDown = () => {
-    if (timer === 20) {
+    if (timer === 20000) {
         clearInterval(interval);
         next_question.click();
+
     } else {
         timer++;
         time.innerText = timer;
@@ -83,7 +84,7 @@ let loadData = () => {
 
 loadData();
 
-//what happen when 'Continue' Button Will Click
+//what happen when 'Continue' Button Gets Clicked
 continueBtn.addEventListener("click", () => {
     quiz.style.display = "block";
     guide.style.display = "none";
@@ -112,14 +113,14 @@ choice_que.forEach((choices, choiceNo) => {
         //stop Counter
         clearInterval(interval);
 
-        //disable All Options When User Select An Option
+        //disable All Options When User Selects An Option
         for (i = 0; i <= 3; i++) {
             choice_que[i].classList.add("disabled");
         }
     })
 });
 
-////what happen when 'Next' Button Will Click
+////what happen when 'Next' Button Gets Clicked
 next_question.addEventListener("click", () => {
     //    if index is less then MCQS.length
     if (index !== MCQS.length - 1) {
@@ -182,6 +183,7 @@ question: "In JavaScript, which of the following is NOT an assignment operator?"
     choice4: "=",
 answer: 1
 },
+
 {
     question: "How do you create a function?",
 choice1: "function:myFunction()",
@@ -190,6 +192,7 @@ choice3: "function myFunction()",
 choice4: "myFunction():function",
 answer: 3
 },
+
 {
     question: "In JavaScript, the expression x!=y returns false if:",
 choice1: "the variables are equal.",
@@ -197,4 +200,4 @@ choice2: "x is less than y.",
 choice3: "bthe variables are not equal.",
 choice4: "None of the above.",
 answer: 0
-},
+}
