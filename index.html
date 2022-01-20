@@ -7,45 +7,120 @@
     crossorigin="anonymous">
     <title>How Well Do You Know Javascript?</title>
     <link rel="stylesheet" href="./assets/style.css">
-<style>
-    .col-sm-6{
-        border: solid 1px #D8D8D8;
-        padding: 10px;
-    }
-    .pageMovement{
-        margin-top: 25px;
-    }
-</style>
-</head>
+    </head>
 <body>
     <div class="container">
-        <hi> How Well Do You Know Javascript?</hi>
-        <div class = "row">
+        <h1> How Well Do You Know Javascript?</h1>
+        <div id= "QuizContent" class ="row quiz"></div>
             <div class="col-sm-12">
-                <h2>Question <span></span></h2>
-                <p> Question....</p>
+                <h2 id= "QuizHeader"></h2>
             </div>
-        </div>
-    <div class="row">
-        <div class="col-sm-6">
-            <p>Answer....</p>
-        </div>
-        <div class="col-sm-6">
-            <p>Answer.....</p>
-        </div>
-        <div class="col-sm-6">
-            <p>Answer.....</p>
-        </div>
-        <div class="col-sm-6">
-            <p>Answer.....</p>
-        </div>
+    <div id= "questions"  class= "row">
+        <div class="col-sm-6"> <a data-id="1" class="btn btn-default answer "> 1</a> </div>
+        <div class="col-sm-6"><a data-id="2" class="btn btn-default answer "> 2</a> </div>
+        <div class="col-sm-6"><a data-id="3" class="btn btn-default answer ">3</a> </div>
+        <div class="col-sm-6"><a data-id="4" class="btn btn-default answer ">4</a> </div>
     </div>
+</div>
+
+
+
     <div class="row pageMovement">
-        <div class="col-xs-4 btn btn-primary"> Previous</div>
-        <div class="row pageMovement">
-            <div class="col-xs-4 col-xs-offset-4 btn btn-primary"> Next</div>
+        <div id = "btnPrevious" class="col-xs-4 btn btn-primary pull-left"> Previous</div>
+        <div id= "btnNext" class="col-xs-5 col-sm-4 col-sm-offset-4 col-xs-offset-2 btn btn-primary pull-right"> Next</div>
+    </div>
+    <div class="row">
+        <div id= "finishQuiz" class = "btn btn-success btn-block hide"> Submit Quiz</div>
+    </div>
+    <div class= "row progres">
+        <div id="progressBar" class = "progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+        aria-valuenow="0" aria-valuemax="100" style="width:50%"> 0% Complete</div>
     </div>
     </div>
-    <script src="./assets/script.js"></script>
+</div>
 </body>
 </html>
+
+
+<script>
+
+    var CurPage=0,
+        correct = 0;
+    var myAnswers = [];
+    var myQuiz = [
+        ["What is addEventListener() used for?",1, "Attach a Click Event", "Nothing", "Never Use It", "listens to HTML"],
+    [ "What does DOM stand for", 1, "Document Object Model", "Donald Over Mickey", "Do Over Models", "Nothing"],
+    [ " Alert(message), close() and reset() are JavaScript:", 2, "Objects","Methods","Properties","Commands"]
+];
+
+var myHeader = document.getElementById("quizHeader");
+var classname = document.getElementsByClassName("answer");
+var myQuestion = document.getElementById("questions");
+var progressBar = document.getElementById("progressBar");
+var btnNext = document.getElementById("btnNext");
+var btnPrevious = document.getElementById("finishQuiz");
+var btnFinish = document.getElementById("finishQuiz");
+checkPage();
+btnNext.addEventListener("click", moveNext);
+btnPrevious.addEventListener("click", moveBack);
+btnFinish.addEventListener("click", endQuiz);
+btnFinish.addEventListener("click",endQuiz);
+    
+   
+
+    for (var i = 0; i < classname.length; i++ ) {
+        classname [i]. addEventListener('click', myAnswer, false);
+    }
+
+
+
+
+    function myAnswer()
+    {
+        var idAnswer = this.getAttribute("data-id");
+        //Check for Answer//
+
+        myAnswers[curPage] = idAnswer;
+        if (myQuiz [curPage] [1] == idAnswer){
+            console.log('Correct Answer');
+        } else{
+            console.log('Wrong Answer');
+        }
+        console.log(myAnswers);
+    }
+    function moveNext() {
+        //check if answer has been made
+        if (myAnswers[curPage]){
+            console.log('okay to proceed');
+            if (curPage < (myQuiz.length -1)){
+                curPage++;
+                checkPage( curPage);
+            } else {
+                //check if quiz is completed//
+                console.log( 'end of quiz Page' + curPage);
+            }
+        }
+    } else{
+        console.log('not answered');
+    }
+
+        curPage++;
+        checkPage(curPage)
+    }
+
+    function checkPage(i) {
+       console.log(curPage);
+       
+       if(curPage == 1){myOne.classList.add("show");myOne.classList.remove("hide");myTwo.classList("hide");myTwo.classlist.remove("show");}
+       
+      
+       if(curPage == 2){myOne.classList.add("hide");myOne.classList.remove("show");myTwo.classList("show");myTwo.classlist.remove("hide");}
+      
+   
+    }
+
+    function moveback() {
+        curPage--;
+        checkPage(curPage)
+    }
+</script>
