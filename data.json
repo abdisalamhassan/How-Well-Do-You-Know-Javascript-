@@ -1,0 +1,84 @@
+{
+  "Questions": [
+    {
+      "Quiz": "Q.1)  How does a 'for' loop start?",
+      "option1": "for (i = 0; i <= 5)",
+      "option2": "for (i = 0; i <= 5; i++) ",
+      "option3": "for i = 1 to 5",
+      "option4": "for (i <= 5; i++)",
+      "answer": "for (i = 0; i <= 5; i++)"
+    },
+    {
+      "Quiz": "Q.2) Alert(message), close() and reset() are JavaScript:",
+      "option1": "Methods",
+      "option2": "console.log",
+      "option3": "commands",
+      "option4": "Properties",
+      "answer": "Methods"
+    },
+    {
+      "Quiz": "Q.3) Which HTML attribute is used to define inline styles?",
+      "option1": " ||",
+      "option2": "*=",
+      "option3": "+=",
+      "option4": "=",
+      "answer": " ||"
+    },
+    {
+      "Quiz": "Q.4) In JavaScript, the symbols + - * and / are:",
+      "option1": "operators.",
+      "option2": "expressions.",
+      "option3": "comparison operators.",
+      "option4": "None of the above.",
+      "answer": "operators."
+    },
+    {
+      "Quiz": "Q.5) How do you find the largest number of 2 and 4? ",
+      "option1": "Math.ceil(2,4)",
+      "option2": "Math.max(2,4) ",
+      "option3": "ceil(2,4)",
+      "option4": "top(2,4)",
+      "answer": "Math.max(2,4)"
+    },
+    {
+        "Quiz": "Q.6) What is the correct syntax for referring to an external script called 'xxx.js'? ",
+        "option1": "<script src='xxx.js'>",
+        "option2": " <script name='xxx.js'> ",
+        "option3": " <script href='xxx.js'>",
+        "option4": "<script value='xxx.js'>",
+        "answer": "<script src='xxx.js'>"
+      },
+      {
+        "Quiz": "Q.7) Where is the correct place to insert a JavaScript?  ",
+        "option1": "Both the <head> section and the <body> section are correct",
+        "option2": " The <body> section ",
+        "option3": " The <head> section",
+        "option4": "On the css page",
+        "answer": "Both the <head> section and the <body> section are correct"
+      },
+      {
+        "Quiz": "Q.8) How do you write 'Hello World' in an alert box? ",
+        "option1": "alert('Hello World')",
+        "option2": "msgBox('Hello World') ",
+        "option3": " alertBox='Hello World'",
+        "option4": "alertBox('Hello World')",
+        "answer": "alert('Hello World')"
+      },
+      {
+        "Quiz": "Q.9) How do you create a function?",
+        "option1": "function:myFunction()",
+        "option2": " function=myFunction() ",
+        "option3": " function myFunction() ",
+        "option4": "myFunction():function",
+        "answer": "function myFunction() "
+      },
+      {
+        "Quiz": "Q.10) How do you call a function named 'myFunction'?",
+        "option1": "call myFunction()",
+        "option2": " myFunction() ",
+        "option3": " call function myFunction",
+        "option4": "Call.myFunction()",
+        "answer": "myFunction() "
+      }
+  ]
+}
