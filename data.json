@@ -8,6 +8,7 @@
       "option4": "for (i <= 5; i++)",
       "answer": "for (i = 0; i <= 5; i++)"
     },
+
     {
       "Quiz": "Q.2) Alert(message), close() and reset() are JavaScript:",
       "option1": "Methods",
@@ -16,6 +17,7 @@
       "option4": "Properties",
       "answer": "Methods"
     },
+
     {
       "Quiz": "Q.3) Which HTML attribute is used to define inline styles?",
       "option1": " ||",
@@ -24,6 +26,7 @@
       "option4": "=",
       "answer": " ||"
     },
+    
     {
       "Quiz": "Q.4) In JavaScript, the symbols + - * and / are:",
       "option1": "operators.",
@@ -48,6 +51,7 @@
         "option4": "<script value='xxx.js'>",
         "answer": "<script src='xxx.js'>"
       },
+
       {
         "Quiz": "Q.7) Where is the correct place to insert a JavaScript?  ",
         "option1": "Both the <head> section and the <body> section are correct",
@@ -56,6 +60,7 @@
         "option4": "On the css page",
         "answer": "Both the <head> section and the <body> section are correct"
       },
+
       {
         "Quiz": "Q.8) How do you write 'Hello World' in an alert box? ",
         "option1": "alert('Hello World')",
@@ -64,6 +69,7 @@
         "option4": "alertBox('Hello World')",
         "answer": "alert('Hello World')"
       },
+
       {
         "Quiz": "Q.9) How do you create a function?",
         "option1": "function:myFunction()",
@@ -72,6 +78,7 @@
         "option4": "myFunction():function",
         "answer": "function myFunction() "
       },
+
       {
         "Quiz": "Q.10) How do you call a function named 'myFunction'?",
         "option1": "call myFunction()",

@@ -2,12 +2,14 @@
 <html>
 
 <head>
-	<title>Quiz Application</title>
+	<title>Javascript Quiz</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
 		integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-		crossorigin="anonymous"></script>
+		crossorigin="anonymous">
+    
+    </script>
 
 </head>
 
@@ -27,8 +29,13 @@
 
 				<div class="start_page">
 					<h3 class="text-center mb-5">How Well Do You Know Javascript?</h3>
-					<p>You will get 1 point for each correct answer, At the end of the Quiz,
-						your total score will be displayed. Maximum score is 10 points.
+					<p>You will get 1 point for each correct answer.<br>
+                        <br>
+                         At the end of the Quiz, your total score will be displayed. <br> 
+                         <br>
+                         Maximum score is 10 points.<br>
+                         <br>
+                          Good Luck!
 					</p>
 					<button class="btn btn-success d-flex mx-auto mt-4" id="btn">
 						<h5>Start the Quiz!</h5>
@@ -47,15 +54,17 @@
 						<button class="btn btn-block btn-outline-success text-left option" id="options2"></button>
 						<button class="btn btn-block btn-outline-success text-left option" id="options3"></button>
 						<button class="btn btn-block btn-outline-success text-left option" id="options4"></button>
+
 						<div class="footer p-4">
-							<button class="btn btn-success float-left" id="prev">Previos</button>
+							<button class="btn btn-success float-left" id="prev">Previous</button>
 							<button class="btn btn-success float-right" id="next">Next</button>
 
 						</div>
 					</div>
 
 					<div class="d-flex justify-content-center">
-						<button class="btn btn-primary btn-lg mx-auto" id="finish">Finish</button>
+
+						<button class="btn btn-primary btn-lg mx-auto" id="finish">Finish!</button>
 
 					</div>
 
@@ -63,10 +72,12 @@
 
 				<!-- Result Page -->
 				<div id="Result">
-					<h3 class="mt-5 display-4">Marks: <span id="marks"></span>/10</h3>
-					<h3 class="mt-4"><span id="correct_answer">3</span> Correct out of 10</h3>
-					<h3 class="mt-4">Result : <span id="percentage">100%</span></h3>
-				</div>
+					<h3 class="mt-10 display-9">Marks: <span id="marks"></span>/10</h3>
+					<h3 class="mt-9"><span id="correct_answer">10</span> Correct out of 10</h3>
+					<h3 class="mt-9">Result : <span id="percentage">100%</span></h3>
+                    <input type = "text" id ="initials" name = "initials" placeholder="initials">	
+                     <button id = "saveBtn">Save</button>
+                </div>
 
 			</div>
 
@@ -79,7 +90,7 @@
 		// Variables
 
 		var count = 0;
-		var time = 30;
+		var time = 60;
 		var marks = 0;
 		var answer = [];
 		var timer;
@@ -97,7 +108,7 @@
 			function buttons_manager() {
 				if (count > 0) {
 					$('#prev').show();
-					if (count == 4) {
+					if (count == 9) {
 						$('#next').hide();
 						$('#finish').show();
 					}
@@ -129,7 +140,7 @@
 			// Answer Selection Function
 
 			function selected_Answer() {
-				for (var i = 0; i < 4; i++) {
+				for (var i = 0; i < 9; i++) {
 					var a = document.getElementById("options").children;
 					if (a[i].innerHTML == answer[count]) {
 						$("#options").children("button")[i].classList.add("active");
@@ -144,7 +155,7 @@
 				for (var i = 0; i < answer.length; i++) {
 					if (answer[i] == data.Questions[i].answer) {
 
-						marks += 5;
+						marks += 1;
 					}
 				}
 				console.log(answer)
@@ -155,16 +166,115 @@
 				$('#percentage').text((marks / 10) * 100 + "%");
 
 				$("#Result").show();
+                $("#saveBtn").on('click', function() {
+                    var initials = $( "#initials").val()
+                    
+
+                localStorage.setItem('initials', initials)
+                localStorage.setItem('score', marks)
+                })
 			}
+
 			$("#options").hide();
 
 			// Attach API
 
-			fetch('data.json')
+			/* fetch('data.json')
 				.then(function (response) {
 					return response.json();
 				})
-				.then(function (data) {
+				.then(function (data) {*/
+                    var data = {
+  "Questions": [
+    {
+      "Quiz": "Q.1)  How does a 'for' loop start?",
+      "option1": "for (i = 0; i <= 5)",
+      "option2": "for (i = 0; i <= 5; i++) ",
+      "option3": "for i = 1 to 5",
+      "option4": "for (i <= 5; i++)",
+      "answer": "for (i = 0; i <= 5; i++)"
+    },
+
+    {
+      "Quiz": "Q.2) Alert(message), close() and reset() are JavaScript:",
+      "option1": "Methods",
+      "option2": "console.log",
+      "option3": "commands",
+      "option4": "Properties",
+      "answer": "Methods"
+    },
+
+    {
+      "Quiz": "Q.3) Which HTML attribute is used to define inline styles?",
+      "option1": " ||",
+      "option2": "*=",
+      "option3": "+=",
+      "option4": "=",
+      "answer": " ||"
+    },
+    
+    {
+      "Quiz": "Q.4) In JavaScript, the symbols + - * and / are:",
+      "option1": "operators.",
+      "option2": "expressions.",
+      "option3": "comparison operators.",
+      "option4": "None of the above.",
+      "answer": "operators."
+    },
+    {
+      "Quiz": "Q.5) How do you find the largest number of 2 and 4? ",
+      "option1": "Math.ceil(2,4)",
+      "option2": "Math.max(2,4) ",
+      "option3": "ceil(2,4)",
+      "option4": "top(2,4)",
+      "answer": "Math.max(2,4)"
+    },
+    {
+        "Quiz": "Q.6) What is the correct syntax for referring to an external script called 'xxx.js'? ",
+        "option1": "<script src='xxx.js'>",
+        "option2": " <script name='xxx.js'> ",
+        "option3": " <script href='xxx.js'>",
+        "option4": "<script value='xxx.js'>",
+        "answer": "<script src='xxx.js'>"
+      },
+
+      {
+        "Quiz": "Q.7) Where is the correct place to insert a JavaScript?  ",
+        "option1": "Both the <head> section and the <body> section are correct",
+        "option2": " The <body> section ",
+        "option3": " The <head> section",
+        "option4": "On the css page",
+        "answer": "Both the <head> section and the <body> section are correct"
+      },
+
+      {
+        "Quiz": "Q.8) How do you write 'Hello World' in an alert box? ",
+        "option1": "alert('Hello World')",
+        "option2": "msgBox('Hello World') ",
+        "option3": " alertBox='Hello World'",
+        "option4": "alertBox('Hello World')",
+        "answer": "alert('Hello World')"
+      },
+
+      {
+        "Quiz": "Q.9) How do you create a function?",
+        "option1": "function:myFunction()",
+        "option2": " function=myFunction() ",
+        "option3": " function myFunction() ",
+        "option4": "myFunction():function",
+        "answer": "function myFunction() "
+      },
+
+      {
+        "Quiz": "Q.10) How do you call a function named 'myFunction'?",
+        "option1": "call myFunction()",
+        "option2": " myFunction() ",
+        "option3": " call function myFunction",
+        "option4": "Call.myFunction()",
+        "answer": "myFunction() "
+      }
+  ]
+}
 					$('#btn').click(function () {
 						$('#options').show();
 						adding_Questions(data.Questions, count);
@@ -235,7 +345,7 @@
 
 
 
-				})
+				/*})*/
 
 
 
