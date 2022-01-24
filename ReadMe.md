@@ -35,7 +35,11 @@ https://abdisalamhassan.github.io/JavaScript-Quiz/
 
 ## Screenshot
 
+1. <img width="1440" alt="Screen Shot 2022-01-21 at 8 01 09 PM" src="https://user-images.githubusercontent.com/95972020/150619851-3495063e-1cab-4b38-a6af-34d46ba1e303.png">
 
+2. <img width="1440" alt="Screen Shot 2022-01-21 at 8 01 19 PM" src="https://user-images.githubusercontent.com/95972020/150619860-7868a056-0dca-466e-8b62-b474a03ae55d.png">
+
+3. <img width="1440" alt="Screen Shot 2022-01-21 at 8 20 06 PM" src="https://user-images.githubusercontent.com/95972020/150619866-4ab9ddbb-ec3d-4605-aeed-82c9e573ce41.png">
 
 
 ## Contribution
