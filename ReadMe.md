@@ -31,7 +31,7 @@ THEN the user can save their initials and score to local storage
 
 ## Link to Quiz
 
-https://abdisalamhassan.github.io/JavaScript-Quiz/
+https://abdisalamhassan.github.io/How-Well-Do-You-Know-Javascript-/
 
 ## Screenshot
 1. <img width="1440" alt="Screen Shot 2022-01-21 at 8 01 09 PM" src="https://user-images.githubusercontent.com/95972020/150619851-3495063e-1cab-4b38-a6af-34d46ba1e303.png">
